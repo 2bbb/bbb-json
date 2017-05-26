@@ -10,10 +10,10 @@ utility for [nlohmann/json](https://github.com/nlohmann/json)
 #include <bbb/json.hpp>
 
 struct Foo {
-	int x, y;
-	void load(const bbb::json &json) {
-		x = json["x"];
-  	    y = json["y"];
+    int x, y;
+    void load(const bbb::json &json) {
+        x = json["x"];
+        y = json["y"];
     }
 };
 
@@ -21,16 +21,16 @@ struct Foo {
 #include <sstream>
 
 void main() {
-  	std::vector<Foo> foos;
-  	bbb::json json = R"(
-  		[
-  			{"x": 1, "y": 2},
-  			{"x": 3, "y": 4}
-  		]
-  	)"_json;
-  	
+    std::vector<Foo> foos;
+    bbb::json json = R"(
+        [
+            {"x": 1, "y": 2},
+            {"x": 3, "y": 4}
+        ]
+    )"_json;
+    
     bbb::json_utils::parse(json, foos);
-	return 0;
+    return 0;
 }
 ```
 
